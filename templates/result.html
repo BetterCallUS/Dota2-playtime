@@ -34,7 +34,7 @@
         <div class="calcPlayTime">
             <div class="formTitle">
                 <!-- Result -->
-                <h1>
+                <h1 id="Result">
                     ۲ سال و ۸ ماه و ۱۷ روز
                 </h1>
                 <span>
@@ -72,38 +72,7 @@
         
     </div>
 </body>
-    <script type="text/javascript" lang="javascript">
-        // Calc
-        var total_hours = 'فعلا نمیدونم'
-        const day = total_hours / 24
-        const month = day / 12
-        const year = day / 365
-
-
-
-
-
-
-        // Copy Link Button
-        const copyButton = document.getElementById('copy-button');
-        const urlTextField = document.getElementById('url-text-field');
-        
-        copyButton.addEventListener('click', () => {
-        // Get the URL from the text field
-        const urlToCopy = urlTextField.value;
-
-        // Copy the URL to clipboard (using Clipboard API)
-        navigator.clipboard.writeText(urlToCopy)
-            .then(() => {
-            // URL copied successfully
-            alert("لینک در صفحه کلید شما ذخیره شد!");
-            })
-            .catch(err => {
-            // Clipboard write failed
-            console.error('لینک کپی نشد!:', err);
-            alert("خطا در کپی کردن لینک");
-            });
-        });
+    <script type="text/javascript" lang="javascript" src="script.js">
     </script>
 
 </html>

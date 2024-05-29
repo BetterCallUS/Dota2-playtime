@@ -31,7 +31,7 @@
             Takes playtime number and some other datas from users and sends to result page to show the result to user.
             @amiradp @wayofmani
          -->
-        <form action="result.html" method="GET" name="calcPlaytime" class="calcPlayTime">
+        <form action="result.html" id="submitData" method="GET" name="calcPlaytime" class="calcPlayTime">
             <div class="formTitle">
             <!-- 
                     Title
@@ -42,7 +42,7 @@
 
                 <div class="fields">
                     <!-- How many hours have you played this game -->
-                    <input min="1" type="number" name="playtime_number" id="playtime_number" placeholder="تعداد ساعتی که بازی کردید" class="dota2-input state-available" autocomplete="false">
+                    <input min="1" type="number" name="playtime_number" id="playtime_number" placeholder="تعداد ساعتی که بازی کردید" class="dota2-input state-available" autocomplete="false" id="total_PlaytimeHours">
 
                     <!-- Who Suggest this game to you -->
                     <input type="text" name="suggested_by" id="suggested_by" placeholder="کی بهتون معرفی کرد این بازیو؟ (به زودی...)" class="dota2-input state-disable" disabled>
@@ -50,7 +50,7 @@
             </div>
 
             <!-- Calc -->
-            <button type="submit" class="btn-primary">حساب کن</button>
+            <button type="submit" id="submitButton" class="btn-primary">حساب کن</button>
 
         </form>
         
@@ -96,7 +96,7 @@
                 <img src="../public/images/footer.png" alt="Better Call US Footer Logo">
             </a>
         </footer>
-        
+        <script src="submit.js"></script>
     </div>
 </body>
 </html>
