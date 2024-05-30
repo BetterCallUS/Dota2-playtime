@@ -3,7 +3,6 @@
 > [!IMPORTANT]
 > 🌐 Preview https://bettercallus.github.io/Dota2-playtime/templates
 # در ادامه...
-## Our Team Members
 |عنوان  | لینک |
 |------------- | ------------- | 
 | چطوری بفهمم چقدر دوتا بازی کردم؟  |  [Link](https://bettercallus.github.io/Dota2-playtime/templates/how-to-find-dota2-playtime.html) |
