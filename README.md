@@ -30,11 +30,13 @@ form.addEventListener('submit', (e) => {
     window.location.href = url.toString();
 });
 ```
+.
 2. یه فایل جدید بسازید یا توی صفحه دوم اسکریپتشو بنویسید. باید مقدار های ورودی رو از صفحه قبلی دریافت بکنید که روش های زیادی داره ولی من این کارو کردم. 
 ```javascript
  const urlParams = new URLSearchParams(window.location.search);
  let total_hours = urlParams.get('total_hours'); // Get your Input Value
 ```
+.
 3. بعدش این متغییر ها رو تعریف باید بکنید.
    1.بیاید محاسبه رو ساده تر بکنیم، اول مقدار ساعت رو تبدیلش میکنیم به روز که ساده تر بشه محاسبات.
    2.ماه و سال رو ۰ قرار می‌دیم و یه متغییر به اسم reaminingDays تعریف میکنیم و برابر با days میزاریمش. حالا راه های زیادی هست برای حساب کردنش ولی من اینطوری رفتم جلو که اول سال رو بدست بیارم بعد ماه رو بعد روز خودش به دست میاد و تقریبا درست ترین روشه.
@@ -46,6 +48,7 @@ form.addEventListener('submit', (e) => {
     remainingDays = days,
     resultElement = document.getElementById('Result') // The place you want to show your text It's a H1 tag in my code
 ```
+.
 4.به دست اوردن سال اینطوریه که از یه حلقه While استفاده می‌کنم و میگم تعداد روز ها (که همون ساعت ها بودن که تبدیل به روز شدن) اگه بیشتر یا مساوی بود با 365 این حلقه رو ادامه بده و هر بار که ادامه میدی یدونه به مقدار متغیر years که ۰ بود اضافه کن و ۳۶۵ تا از remainingDays کم بکن. 
 ```javascript
 // Years
@@ -55,6 +58,7 @@ while(remainingDays >= 365)
     remainingDays -= 365
 }
 ```
+.
 5. برای به دست آوردن ماه هم همون روش بالاس ولی اینبار به ماه اضافه می‌کنه و هر بار که تعداد روز های باقی مونده reaminingDays بیشتر از ۳۰ بود به months یدونه اضافه میکنه و ۳۰ تا از reamingDays کم می‌کنه.
 ```javascript
 // Months
@@ -63,6 +67,7 @@ while (remainingDays >= 30) {
     remainingDays -= 30;
 }
 ```
+.
 6. روز هم خودش به دست اومده الان. اینقدر از روز کم کردیم که الان دیگه خودش به دست اومده و توی reamingDays می‌تونید تعداد روز هایی که بازی کرده رو داشته باشیم (روز هایی که از ماه و سالش باقی مونده و بیشتر از ۳۰ هم نمیشه.)
 7. برای نمایشش توی HTML هم باز راه زیاد دارید ولی من اینطوری رفتم جلو و چندتا نکته داره مثلا وقتی سال ۰ هست نباید بگه ۰ کلا نباید نشونش بده و اگه ماه ۰ هست فقط باید روز و سال رو نشون بده. که تمیز تر باشه همین. و البته از Math.Floor هم استفاده کردم که اعشار رو پاک بکنم.
 ```javascript
@@ -75,6 +80,7 @@ if(years==0) // only month and days
                 else // general form: year month and day
                     resultElement.innerHTML = `${Math.floor(years)} سال و ${Math.floor(months)} ماه و ${Math.floor(remainingDays)} روز`;
 ```
+.
 8. همین و تمام دمتون گرم یه ستاره بدید دلمون خوش بشه :) 
 
 .
